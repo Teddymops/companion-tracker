@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_toolbar" />
+
+        <fragment
+            android:id="@+id/map"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/design_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="68dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+
+        <RelativeLayout
+            android:id="@+id/dragView_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="68dp">
+
+
+            <ProgressBar
+                android:id="@+id/dashboard_progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/friendPhoto_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/activity_vertical_margin"
+                android:src="@drawable/ic_action_account_circle_40" />
+
+
+            <LinearLayout
+                android:id="@+id/userDetails_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/friendPhoto_imageView"
+                android:layout_toRightOf="@+id/friendPhoto_imageView"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/activity_vertical_margin">
+
+
+                <TextView
+                    android:id="@+id/userName_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Name"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/userAddress_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="2"
+                    android:text="Address"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/dragView_relativeLayout">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/connections_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:padding="5dp"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/item_invite" />
+
+            <ProgressBar
+                android:id="@+id/connections_progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/connections_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/connections_progressBar"
+                android:layout_centerInParent="true"
+                android:text="@string/please_wait" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@id/design_bottom_sheet"
+        app:layout_anchorGravity="top|end"
+        app:srcCompat="@android:drawable/ic_dialog_map" />
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#5D67A8</color>
+
+    <color name="wild_sand">#F5F5F5</color>
+    <color name="mine_shaft">#3C3C3C</color>
+    <color name="silver_chalice">#A6A6A6</color>
+    <color name="tundora">#404040</color>
+    <!--Blue button-->
+    <color name="robin_egg_blue">#00BDD2</color>
+    <color name="blue_chill">#0A9AAB</color>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.companiontracker">
+
+    <!--internet-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--location-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--camera-->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!--Storage access - to keep profile pictures-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--Directions-->
+    <uses-permission android:name="com.androidtutorialpoint.mymapsappsdirection.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+
+    <!--Read Contacts-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="CompanionTracker"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyATmgLpOSf6GH6oCAeBB2ix97oUZA_XOfc" />
+
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SignInActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation">
+
+        </activity>
+
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".InviteActivity" />
+        <activity android:name=".InvitePhoneContactsActivity" />
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".MyConnectionsActivity"/>
+        <activity android:name=".NotificationActivity"/>
+        <activity android:name=".ChangePasswordActivity"/>
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <service android:name=".LocationService"/>
+
+    </application>
+
+</manifest>
